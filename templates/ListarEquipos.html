@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block contenido %}
+    <div class="display-1 text-center">Equipos Mundial</div>
+    <br><br><br><br>
+    <table class="table">
+        <thead id="text">
+            <tr>
+                <th>Nombre</th>
+                <th>Año creacion</th>
+                <th>Fue campeon</th>
+            </tr>
+        </thead>
+        <tbody id="text">
+            {% for Equipo in equipo %}
+            <tr>
+                <td>{{ Equipo.nombre}}</td>
+                <td>{{ Equipo.anio_creacion}}</td>
+                {% if Equipo.campeon %}
+                <td>Si</td>
+                {% else %}
+                <td>No</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    <style>
+        body{
+            background: #0f0c29;
+            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            border: 1px solid black;
+        }
+        #text{
+            color: white;
+        }
+    </style>
+
+{% endblock %}

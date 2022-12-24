@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block contenido %}
+    <div class="display-1 text-center">
+        <span>{{ equipo.nombre }}</span><br>
+        <span>{{ equipo.anio_creacion }}</span><br>
+        {% if equipo.campeon == 1 %}      
+            <img src="{% static 'img/cam.jpg' %}">
+        {% endif %}
+    </div>
+    <style>
+        body{
+            background: #0f0c29;
+            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            border: 1px solid black;
+        }
+        #text{
+            color: white;
+        }
+    </style>
+{% endblock %}
